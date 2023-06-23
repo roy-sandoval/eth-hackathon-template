@@ -8,6 +8,9 @@ dependencies:
   '@account-abstraction/contracts':
     specifier: ^0.6.0
     version: 0.6.0
+  '@pimlico/erc20-paymaster':
+    specifier: ^0.0.12
+    version: 0.0.12
   '@prisma/client':
     specifier: ^4.14.0
     version: 4.14.0(prisma@4.14.0)
@@ -32,6 +35,9 @@ dependencies:
   '@trpc/server':
     specifier: ^10.26.0
     version: 10.26.0
+  contracts:
+    specifier: link:@pimlico/erc20-paymaster/contracts
+    version: link:@pimlico/erc20-paymaster/contracts
   dotenv:
     specifier: ^16.3.1
     version: 16.3.1
@@ -139,8 +145,27 @@ devDependencies:
 
 packages:
 
+  /@account-abstraction/contracts@0.5.0:
+    resolution: {integrity: sha512-CKyS9Zh5rcYUM+4B6TlaB9+THHzJ+6TY3tWF5QofqvFpqGNvIhF8ddy6wyCmqZw6TB74/yYv7cYD/RarVudfDg==}
+    dev: false
+
   /@account-abstraction/contracts@0.6.0:
     resolution: {integrity: sha512-8ooRJuR7XzohMDM4MV34I12Ci2bmxfE9+cixakRL7lA4BAwJKQ3ahvd8FbJa9kiwkUPCUNtj+/zxDQWYYalLMQ==}
+    dev: false
+
+  /@account-abstraction/utils@0.5.0:
+    resolution: {integrity: sha512-dgXguTn5WgFMmr3wQMdLGEoIMDcIJgzAv74YlHeb2D3Nyy1pByPArSb3eLOOcgxCJSJeqTscpO9P57uhNkkC4A==}
+    dependencies:
+      '@account-abstraction/contracts': 0.5.0
+      '@ethersproject/abi': 5.7.0
+      '@ethersproject/providers': 5.7.2
+      '@openzeppelin/contracts': 4.9.2
+      debug: 4.3.4(supports-color@8.1.1)
+      ethers: 5.7.2
+    transitivePeerDependencies:
+      - bufferutil
+      - supports-color
+      - utf-8-validate
     dev: false
 
   /@adraffy/ens-normalize@1.9.0:
@@ -1102,8 +1127,29 @@ packages:
       hardhat: 2.13.0(ts-node@10.9.1)(typescript@5.0.4)
     dev: true
 
+  /@openzeppelin/contracts@4.9.2:
+    resolution: {integrity: sha512-mO+y6JaqXjWeMh9glYVzVu8HYPGknAAnWyxTRhGeckOruyXQMNnlcW6w/Dx9ftLeIQk6N+ZJFuVmTwF7lEIFrg==}
+    dev: false
+
   /@pedrouid/environment@1.0.1:
     resolution: {integrity: sha512-HaW78NszGzRZd9SeoI3JD11JqY+lubnaOx7Pewj5pfjqWXOEATpeKIFb9Z4t2WBUK2iryiXX3lzWwmYWgUL0Ug==}
+    dev: false
+
+  /@pimlico/erc20-paymaster@0.0.12:
+    resolution: {integrity: sha512-UG03UYI6JgOVtMLtDhZeqUUStY4YPvvL7mBqBptLAkDkeUrDW5FlrwSZEZAv++3syOT2wbw5vHYkCWr5hF3UbQ==}
+    dependencies:
+      '@account-abstraction/contracts': 0.6.0
+      '@account-abstraction/utils': 0.5.0
+      '@ethersproject/abi': 5.7.0
+      '@ethersproject/abstract-provider': 5.7.0
+      '@ethersproject/providers': 5.7.2
+      '@openzeppelin/contracts': 4.9.2
+      ethers: 5.7.2
+      solady: 0.0.90
+    transitivePeerDependencies:
+      - bufferutil
+      - supports-color
+      - utf-8-validate
     dev: false
 
   /@pkgr/utils@2.4.1:
@@ -6230,6 +6276,10 @@ packages:
     resolution: {integrity: sha512-3dOsAHXXUkQTpOYcoAxLIorMTp4gIQr5IW3iVb7A7lFIp0VHhnynm9izx6TssdrIcVIESAlVjtnO2K8bg+Coew==}
     engines: {node: '>=12'}
     dev: true
+
+  /solady@0.0.90:
+    resolution: {integrity: sha512-NSc0mkfJo2CeKfFfyED1qbBQ8ofvDFxpBb0BLJ/wx2ZN7vCAYl8sp/j6TIIMdPb0BDvOKl2Rie9dVum+KIKeVA==}
+    dev: false
 
   /solc@0.7.3(debug@4.3.4):
     resolution: {integrity: sha512-GAsWNAjGzIDg7VxzP6mPjdurby3IkGCjQcM8GFYZT6RyaoUZKmMU6Y7YwG+tFGhv7dwZ8rmR4iwFDrrD99JwqA==}

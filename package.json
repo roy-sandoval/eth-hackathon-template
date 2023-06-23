@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@account-abstraction/contracts": "^0.6.0",
+    "@pimlico/erc20-paymaster": "^0.0.12",
     "@prisma/client": "^4.14.0",
     "@rainbow-me/rainbowkit": "^1.0.2",
     "@t3-oss/env-nextjs": "^0.3.1",
@@ -21,6 +22,7 @@
     "@trpc/next": "^10.26.0",
     "@trpc/react-query": "^10.26.0",
     "@trpc/server": "^10.26.0",
+    "contracts": "link:@pimlico/erc20-paymaster/contracts",
     "dotenv": "^16.3.1",
     "next": "^13.4.2",
     "react": "18.2.0",
